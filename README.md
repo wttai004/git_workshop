@@ -1,2 +1,6 @@
-# git_workshop
-This is a planned workshop to briefly introduce Git and GitHub to other graduate students at Penn
+# Intro to Git and GitHub
+
+Content:
+
+
+... oh i need to commit this everytime. lets just write things out on my local laptop before dumping it in.
