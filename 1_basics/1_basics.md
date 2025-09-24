@@ -85,6 +85,9 @@ Now let's further change the text
  1 file changed, 1 insertion(+)
 ```
 
+
+# Viewing history and difference
+
 To view the history of your file, you can use `git log`:
 
 ```
@@ -104,12 +107,14 @@ Date:   Wed Sep 24 12:50:22 2025 -0400
 
 You can see that each commit comes with a unique identifier, and that the most recent one is labeled (HEAD -> main). HEAD means that it is where git is at right now.
 
-(git status, add, commit, stash, diff)
-
-(gitignore)
-
 
 Note: `git diff` works best for files that are in plain text formats. Using this on more complicated files (e.g. pdf, Mathematica notebooks) will lead to outputs that are not human readable. 
+
+# Other commands of note
+
+`git reset` allows you to reset a commit. For example, `git reset HEAD^` resets to the previous commit,  `git reset HEAD^^` to two previous ones, etc. You can also use the commit ID in place.
+
+`git revert` is another way to reset a commit, but it does so by creating a new commit that is identical to the desired one. This is a better choice for works with a remote repository where you have already pushed a commit. 
 
 # A note on Jupyter notebook
 
