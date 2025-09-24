@@ -32,6 +32,78 @@ You should see that you're on the "main" branch (older git versions might set yo
 
 # Basic operations
 
+
+Now, let's create a simple file to demonstrate how git tracks them.
+
+```
+>>> echo hello >> foo.txt
+>>> git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	foo.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+The first commands creates a text file `foo.txt`. You'll notice that it's considered 'untracked' by git–new files are not tracked by git by default. To have its versions be tracked,
+
+```
+>>>git add foo.txt 
+>>>git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   foo.txt
+```
+
+
+Now, we can use `git commit` to create a version of our file
+
+```
+>>> git commit -m "Created foo.txt"
+[main (root-commit) 76f9e71] Created foo.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 foo.txt
+```
+
+(`-m` sets a message for the commit—it's mandatory to include a message, and advisable for your future selves to set this to something that helps you understand what you changed.)
+
+Now let's further change the text
+
+```
+>>> echo world >> foo.txt 
+>>> git add foo.txt
+>>> git commit -m "Further changed foo.txt"
+[main 0d2cd7c] Further changed foo.txt
+ 1 file changed, 1 insertion(+)
+```
+
+To view the history of your file, you can use `git log`:
+
+```
+>>> git log
+commit 0d2cd7c99362cf827294a1c91851c1dbd7e93ca3 (HEAD -> main)
+Author: (Your name)  <(Your email)>
+Date:   Wed Sep 24 12:58:29 2025 -0400
+
+    Further changed foo.txt
+
+commit 76f9e7107b763654eb94151baef62c0cd98e7264
+Author: (Your name)  <(Your email)>
+Date:   Wed Sep 24 12:50:22 2025 -0400
+
+    Created foo.txt
+```
+
+You can see that each commit comes with a unique identifier, and that the most recent one is labeled (HEAD -> main). HEAD means that it is where git is at right now.
+
 (git status, add, commit, stash, diff)
 
 (gitignore)
