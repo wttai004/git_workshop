@@ -105,10 +105,61 @@ Date:   Wed Sep 24 12:50:22 2025 -0400
     Created foo.txt
 ```
 
-You can see that each commit comes with a unique identifier, and that the most recent one is labeled (HEAD -> main). HEAD means that it is where git is at right now.
+You can see that each commit comes with a unique identifier, and that the most recent one is labeled (HEAD -> main). HEAD means that it is where git is at right now. To compare the differences in a file:
+
+```
+>>> git diff HEAD^ foo.txt 
+diff --git a/foo.txt b/foo.txt
+index ce01362..94954ab 100644
+--- a/foo.txt
++++ b/foo.txt
+@@ -1 +1,2 @@
+ hello
++world
+```
+
+This compares the current file to `HEAD^`, which refers to the previous commit (you can also use `HEAD~1`). You can also use `git show` to directly show the result in one commit:
+
+```
+>>> git show HEAD^ foo.txt
+commit 76f9e7107b763654eb94151baef62c0cd98e7264
+Author: (Your name)  <(Your email)>
+Date:   Wed Sep 24 12:50:22 2025 -0400
+
+    Created foo.txt
+
+diff --git a/foo.txt b/foo.txt
+new file mode 100644
+index 0000000..ce01362
+--- /dev/null
++++ b/foo.txt
+@@ -0,0 +1 @@
++hello
+```
 
 
-Note: `git diff` works best for files that are in plain text formats. Using this on more complicated files (e.g. pdf, Mathematica notebooks) will lead to outputs that are not human readable. 
+Note: `git diff` and `git show` works best for files that are in plain text formats. Using this on more complicated files (e.g. pdf, Mathematica notebooks) will lead to outputs that are not human readable. 
+
+
+# .gitignore
+
+
+Oftentimes, you may want git to ignore certain files directly (e.g. caches, logs, large data sets). For example, let's say that we are running jobs on Slurm and want to ignore the output logs. We can create a `.gitignore` file in the repository:
+
+```
+>>> echo *.out >> .gitignore
+>>> git add .gitignore
+>>> git commit -m "Created .gitignore"
+```
+
+Note that, just like every file, you need to commit .gitignore if you want it to be tracked. `*.out` is a wildcard syntax telling git to ignore all files ending with `.out`. Now, git would not change anything if you modify all files in gitignore. 
+
+```
+>>> echo "This would be ignored" >> test.out
+>>> git status
+On branch main
+nothing to commit, working tree clean
+```
 
 # Other commands of note
 
