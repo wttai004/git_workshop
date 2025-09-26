@@ -43,7 +43,7 @@ To https://github.com/<your_username>/workdir.git
 To clone a directory (whether your own or someone else) to your own local computer, simply use `clone`:
 
 ```
-git clone https://github.com/(your_username)/git_workshop.git ~/git_workshop
+>>> git clone https://github.com/(your_username)/git_workshop.git ~/git_workshop
 ```
 
 This will clone the directory to your local device at the directory `~/workshop`. Note that by cloning a repository, it is already associated with the remote repository, so you don't need to run the `git remote add origin` in order to push your commits to your remote repo later on. 
