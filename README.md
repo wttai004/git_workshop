@@ -23,12 +23,12 @@ In the workshop, I'll be demonstrating the workings on my laptop. You can also f
 	- `git status`, `add`, `commit`, `log`, `diff`, `restore`, `stash`
 	- `.gitignore` basics
 	- Syncing with GitHub: `clone`, `pull`, `push`, `fetch`
+ 	- Basic branching: `branch`, `switch`, `merge` and `rebase`
 - VS Code integration (recommended to avoid memorizing many commands)
 
 ## What would *not* be covered:
 
 - Internal Git theory (objects, rebase, etc.)
-- Branching: `branch`, `switch`, `merge`
 - Team workflows (pull request, etc.)
 - Large file management  (git-lfs, DVC, etc.)
 	- Because Git stores *all* snapshots of previous files that has changes, if you have large data files that routinely get changed, you can easily have exploding storage requirement.
