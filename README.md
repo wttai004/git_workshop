@@ -58,8 +58,9 @@ git config --global user.email "your_email@example.com"
 
 This workshop borrows ideas and examples from the resources below:
 
-- **Git & GitHub Tutorial for Scientists** — Dallas Data Science. https://gitbookdown.dallasdatascience.com  [oai_citation:0‡gitbookdown.dallasdatascience.com](https://gitbookdown.dallasdatascience.com/)
-- **Explain Git with D3** — Wei Wang (“onlywei”), interactive visualizations of branching/merging. https://onlywei.github.io/explain-git-with-d3/  [oai_citation:1‡onlywei.github.io](https://onlywei.github.io/explain-git-with-d3/)
+- **Git & GitHub Tutorial for Scientists** — Dallas Data Science. [link](https://gitbookdown.dallasdatascience.com/)
+- **Explain Git with D3** — Wei Wang (“onlywei”), interactive visualizations of branching/merging. [link](https://onlywei.github.io/explain-git-with-d3/)
+- **Learn Git** — Atlassian.  [link](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud)
 
 There are many, _many_ other references on Git and GitHub online from people more experienced than me. Feel free to explore more of them if interested. To highlight one of them, here's a cheatsheet with the most useful commands:
 
