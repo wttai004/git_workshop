@@ -7,7 +7,7 @@ This section covers briefly how to push your repository to GitHub, clone a repos
 
 First, to synchronize a local directory with a remote one, you need to first create a repository on GitHub: right click your icon->Repositories->New, then type "workdir" as the repository name. 
 
-Now, you can add the github repo as the remote repository you want to push your data to:
+Now, you can add the GitHub repo as the remote repository you want to push your data to:
 
 ```
 >>> git remote add origin https://github.com/<your_username>/workdir.git
@@ -32,7 +32,26 @@ To https://github.com/<your_username>/workdir.git
 ```
 
 
+# Synchronizing local changes to remote repository
+
+
+# Getting a repository from Github
+
+
+`Fork` refers to copying someone's GitHub repository and putting it in your GitHub account, so that you have your own copy to work with. You can try this with the git worksho: simply click the **Fork** icon near the top right corner
+
+To clone a directory (whether your own or someone else) to your own local computer, simply use `clone`:
+
+```
+git clone https://github.com/(your_username)/git_workshop.git ~/git_workshop
+```
+
+This will clone the directory to your local device at the directory `~/workshop`. Note that by cloning a repository, it is already associated with the remote repository, so you don't need to run the `git remote add origin` in order to push your commits to your remote repo later on. 
+
+
 # On fetch vs push
+
+
 
 (TODO)
 
