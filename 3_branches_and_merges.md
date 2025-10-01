@@ -1,9 +1,176 @@
+# Branches
 
-# On fetch vs push
+One powerful—and potentially confusing—feature of git is its uses of branches, which is a movable pointer to a certain commit. A typical usage for software developers is that you have a "main" branch with a stable version, while different features are developed by different workers in separate branches. Once a feature is deemed stable, it'll be merged into the main branch. 
+
+For individual researchers, here are common use cases:
+
+- Start from a known-good commit: create a tag to bookmark it (e.g., v1.0), then branch from there to experiment without risking the tagged state.
+- Work across devices: push your branches to a remote (e.g., GitHub) and pull them elsewhere; your local branches track remote-tracking branches like origin/main.
+
+At the most basic user level, you don't have to worry about branches, but they can be very helpful.
+
+<img width="1015" height="599" alt="Screenshot 2025-09-30 at 21 38 49" src="https://github.com/user-attachments/assets/4d1a9c5c-8db6-4648-932a-42b205846f60" />
+Pictorial representation of branching. [Source](https://www.atlassian.com/git/tutorials/using-branches).
+
+# Branching
+
+To create a new branch:
+
+```
+>>> git branch dev
+>>> git switch dev
+Switched to branch 'dev'
+>>> git status
+On branch dev
+nothing to commit, working tree clean
+```
+
+```
+>>> git branch dev
+>>> git switch dev
+Switched to branch 'dev'
+>>> git status
+On branch dev
+nothing to commit, working tree clean
+```
+
+`git branch (branchname)` creates a new branch but _does not switch to the new branch_. To go to the new branch, you need to use either `git switch` or (in older versions) `git branch`. Alternatively,  `git switch -c (branchname)` or (in older versions) `git checkout -b (branchname)` is a shorthand to both create and switch to the branch. 
+
+(Note: `git switch` is a newer syntax compared to `git checkout` for switching branches, which is overloaded because `git checkout` is used both to switch branches and to reset files to certain revisions.)
 
 
+## Working on different branches
 
-(TODO)
+```
+>>> git switch main
+Switched to branch 'main'
+>>> echo "Main branch" >> main_branch.txt
+>>> git add main_branch.txt 
+>>> git commit -m "Created main_branch.txt"
+[main 1885bc8] Created main_branch.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 main_branch.txt
+>>> ls
+foo.txt		main_branch.txt pull.txt	push.txt	test.log
+>>> git switch dev
+Switched to branch 'dev'
+>>> ls
+foo.txt		pull.txt	push.txt	test.log
+```
+
+Note that the files you created in the main branch doesn't impact the dev branch.
+
+```
+>>> echo "Dev branch" >> dev_branch.txt
+>>> git add dev_branch.txt 
+>>> git commit -m "Created dev_branch.txt"
+[dev efe2181] Created dev_branch.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dev_branch.txt
+>>> ls
+dev.txt foo.txt		pull.txt	push.txt	test.log
+```
+
+## Merging
+
+```
+>>> git switch dev
+>>> git merge main
+Merge made by the 'ort' strategy.
+ main_branch.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 main_branch.txt
+>>> ls
+dev_branch.txt	foo.txt		main_branch.txt	pull.txt	push.txt
+```
+
+## Merge conflicts
+
+Conflicts happen when both branches change the same lines.
+
+```
+>>> git checkout -b conflict
+Switched to a new branch 'conflict'
+>>> echo "Mainnnnnnnnn branch" > main_branch.txt
+>>> git add main_branch.txt 
+>>> git commit -m "Modified an existing file. This would cause conflict."
+[conflict 8140a1e] Modified an existing file. This would cause conflict.
+ 1 file changed, 1 insertion(+)
+>>> git merge main
+Auto-merging main_branch.txt
+CONFLICT (content): Merge conflict in main_branch.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+This **merge conflict** needs to be resolved manually. If you view the culprit file, you'll see that both the HEAD version and the version to be merged in the main branch are listed side by side:
+
+```
+>>> cat main_branch.txt
+<<<<<<< HEAD
+Mainnnnnnnnn branch
+=======
+Main branch
+>>>>>>> main
+```
+
+In this case, you'll need to manually resolve the conflict by modifying it
+
+```
+>>> echo "Main branch—solved" > main_branch.txt
+>>> git add main_branch.txt
+>>> git commit -m "Manually resolved conflict"
+```
+
+To bring this fix onto main:
+
+```
+git switch main
+git merge conflict
+```
+
+# A note on merge vs rebase 
+
+Merge and rebase are two different ways to combine two branches. They both create the same final files, but different histories. 
+
+**Merge** (creates a new _merge commit_ that ties both lines together):
+
+```
+
+          I--J
+         /    \
+...--G--H      M   <-- your-branch (HEAD)
+         \    /
+          K--L   <-- origin/main
+```
 
 
-Git branches and merging can be quite confusing. [Here](https://stackoverflow.com/questions/71768999/how-to-merge-when-you-get-error-hint-you-have-divergent-branches-and-need-to-s)'s a stack exchange that has a good explanation.
+**Rebase** (replays your commits on top of a new base, creating new commits):
+
+```
+          I--J   [abandoned]
+         /
+...--G--H--K--L   <-- origin/main
+               \
+                I'-J'  <-- your-branch
+```
+
+**In solo work, the choice is mostly about how you want your history to look**; in larger collaborations, teams set policies to avoid rewriting shared history.
+
+To illustrate the difference, imagine that Alice is working on a feature in her unpolished `dev` branch when Bob pushed a new stable feature in the `main` branch. Alice can *rebase* the `main` branch to her `dev` branch, incorporating Bob's feature while keeping the history linear. After she's happy with her work, she then *merges* `dev`  into `main`—here, using rebase would be inappropriate as this would rewrite the public history of `main` branch to include her own personal ones in the `dev` branch.
+
+**Rule of thumb**
+- **Rebase your own, unpublished branch** onto origin/main to catch up and keep history linear
+- **Merge when integrating into main.** Don’t rebase a public/shared branch.
+
+Further read: 
+
+**Merging vs rebasing—Atlassian**: https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+
+**Stack exchange answer elaborating subtleties in git pull and git merge**: https://stackoverflow.com/questions/71768999/how-to-merge-when-you-get-error-hint-you-have-divergent-branches-and-need-to-s
+
+
+# On remote repositores
+
+Branches in remote repositories work the same way: your local and remote repositories might be in different branches. Under the hood, `git pull` launches both `git fetch`, which obtains git commits from remote repositories, and `git merge` (by default—one can set this to `git rebase` instead), which merges the remote commits to your local ones. Merge conflicts between a local branch and remote branch can be handled in similar ways. 
+
+
