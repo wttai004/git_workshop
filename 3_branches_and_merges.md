@@ -130,7 +130,7 @@ git merge conflict
 
 # A note on merge vs rebase 
 
-Merge and rebase are two different ways to combine two branches. They both create the same final files, but different histories. 
+Merge and rebase are two different ways to combine two branches. They both create the same project states, but different histories. 
 
 **Merge** (creates a new _merge commit_ that ties both lines together):
 
@@ -156,7 +156,7 @@ Merge and rebase are two different ways to combine two branches. They both creat
 
 **In solo work, the choice is mostly about how you want your history to look**; in larger collaborations, teams set policies to avoid rewriting shared history.
 
-To illustrate the difference, imagine that Alice is working on a feature in her unpolished `dev` branch when Bob pushed a new stable feature in the `main` branch. Alice can *rebase* the `main` branch to her `dev` branch, incorporating Bob's feature while keeping the history linear. After she's happy with her work, she then *merges* `dev`  into `main`—here, using rebase would be inappropriate as this would rewrite the public history of `main` branch to include her own personal ones in the `dev` branch.
+To illustrate the difference, imagine that Alice is working on a feature in her unpolished `dev` branch when Bob pushed a new stable feature in the `main` branch. Alice can *rebase* her `dev` branch to `main`, incorporating Bob's feature while keeping the history linear. After she's happy with her work, she then *merges* `dev`  into `main`—here, using rebase would be inappropriate as this would rewrite the public history of `main` branch to include her own personal ones in the `dev` branch.
 
 **Rule of thumb**
 - **Rebase your own, unpublished branch** onto origin/main to catch up and keep history linear
@@ -171,6 +171,8 @@ Further read:
 
 # On remote repositores
 
-Branches in remote repositories work the same way: your local and remote repositories might be in different branches. Under the hood, `git pull` launches both `git fetch`, which obtains git commits from remote repositories, and `git merge` (by default—one can set this to `git rebase` instead), which merges the remote commits to your local ones. Merge conflicts between a local branch and remote branch can be handled in similar ways. 
+Remotes (e.g., GitHub) have their own branches. Locally you track them via remote-tracking refs like origin/main. A local branch typically has an upstream it tracks (e.g., dev ↔ origin/dev).
 
-
+git pull is shorthand for:
+	1.	git fetch (update your remote-tracking branches), then
+	2.	integrate those fetched commits into your current branch — by default via merge, or via rebase if configured/asked.
