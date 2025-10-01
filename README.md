@@ -62,6 +62,7 @@ This workshop borrows ideas and examples from the resources below:
 - **Explain Git with D3** — Wei Wang (“onlywei”), interactive visualizations of branching/merging. [link](https://onlywei.github.io/explain-git-with-d3/)
 - **Learn Git** — Atlassian.  [link](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud)
 
-There are many, _many_ other references on Git and GitHub online from people more experienced than me. Feel free to explore more of them if interested. To highlight one of them, here's a cheatsheet with the most useful commands:
+There are many, _many_ other references on Git and GitHub online from people more experienced than me. Feel free to explore more of them if interested. To highlight some others:
 
-- **Visual Git Cheatsheet** — NDPSoftware. http://ndpsoftware.com/git-cheatsheet.html#loc=local_repo
+- **Visual Git Cheatsheet** — NDPSoftware. [link](http://ndpsoftware.com/git-cheatsheet.html#loc=local_repo)
+- **Learning Git Branching** — pcottle. A fun game that goes through branching in git locally and remotely. [link](A fun https://learngitbranching.js.org)
