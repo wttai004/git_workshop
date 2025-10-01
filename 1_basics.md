@@ -105,7 +105,7 @@ Date:   Wed Sep 24 12:50:22 2025 -0400
     Created foo.txt
 ```
 
-You can see that each commit comes with a unique identifier, and that the most recent one is labeled (HEAD -> main). HEAD means that it is where git is at right now. To compare the differences in a file:
+You can see that each commit comes with a unique identifier, and that the most recent one is labeled (`HEAD -> main`). `HEAD` means that it is where git is at right now. To compare the differences in a file:
 
 ```
 >>> git diff HEAD^ foo.txt 
@@ -139,6 +139,18 @@ index 0000000..ce01362
 
 
 Note: `git diff` and `git show` works best for files that are in plain text formats. Using this on more complicated files (e.g. pdf, Mathematica notebooks) will lead to outputs that are not human readable. 
+
+You can also use `git checkout (commit ID)` to switch to an older version, attaching `HEAD` to a previous commit (this is called a detached HEAD state)
+
+```
+>>> git checkout HEAD^
+>>> cat foo.txt
+hello
+>>> git checkout main
+>>> cat foo.txt
+hello
+world
+```
 
 
 # .gitignore
