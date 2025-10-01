@@ -1,6 +1,6 @@
 # Introduction
 
-This is a short workshop intended to introduce basic workflow using Git and GitHub that a typical physics graduate student might encounter, written for a planned workshop at University of Pennsylvania. The intended outcome of the workshop is for the participants to go away knowing how to apply git to version-control their own codes at a basic operational level.
+This is a planned short workshop intended to introduce basic workflow using Git and GitHub that a typical physics graduate student might encounter, written for a planned workshop at University of Pennsylvania. The intended outcome of the workshop is for the participants to go away knowing how to apply git to version-control their own codes at a basic operational level.
 
 **What is Git?**
 
