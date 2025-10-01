@@ -140,13 +140,13 @@ index 0000000..ce01362
 
 Note: `git diff` and `git show` works best for files that are in plain text formats. Using this on more complicated files (e.g. pdf, Mathematica notebooks) will lead to outputs that are not human readable. 
 
-You can also use `git checkout (commit ID)` to switch to an older version, attaching `HEAD` to a previous commit (this is called a detached HEAD state)
+You can also use `git switch (commit ID)` or `git checkout (commit ID)` to switch to an older version, attaching `HEAD` to a previous commit (this is called a detached HEAD state)—more on that in later section.
 
 ```
->>> git checkout HEAD^
+>>> git switch HEAD^
 >>> cat foo.txt
 hello
->>> git checkout main
+>>> git switch main
 >>> cat foo.txt
 hello
 world
