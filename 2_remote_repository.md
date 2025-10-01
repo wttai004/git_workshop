@@ -96,12 +96,6 @@ To clone a directory (whether your own or someone else) to your own local comput
 
 This will clone the directory to your local device at the directory `~/workshop`. Note that by cloning a repository, it is already associated with the remote repository, so you don't need to run the `git remote add origin` in order to push your commits to your remote repo later on. 
 
+# Note:
 
-# On fetch vs push
-
-
-
-(TODO)
-
-
-Git branches and merging can be quite confusing. [Here](https://stackoverflow.com/questions/71768999/how-to-merge-when-you-get-error-hint-you-have-divergent-branches-and-need-to-s)'s a stack exchange that has a good explanation.
+For best practice, always fetch/merge and pull before making local changes. Otherwise, merge conflicts would happen and need to be solved manually. More on this in next section.
