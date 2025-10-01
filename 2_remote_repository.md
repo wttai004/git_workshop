@@ -34,9 +34,57 @@ To https://github.com/<your_username>/workdir.git
 
 # Synchronizing local changes to remote repository
 
+Suppose you modify your local repository:
+
+```
+>>> echo "Testing file to be pushed" >> push.txt
+>>> git add push.txt 
+>>> git commit -m "Added push.txt."
+[main 55336bf] Added push.txt.
+ 1 file changed, 1 insertion(+)
+ create mode 100644 push.txt
+```
+
+Pushing this to remote is as simple as using `git push`: 
+
+```
+>>> git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 335 bytes | 335.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/(your username)/workdir.git
+   0c44a25..55336bf  main -> main
+```
+
+Here, `origin` is the alias on your system for the remote repository, and `main` is the branch you are currently in (more on this in next section).
+
+On the other hand, let's say that you create a new file named `pull.txt` remotely on your GitHub in this folder (click "Add file->Create New File") . Now, your remote repository would look like this:
+
+<img width="1477" height="387" alt="Screenshot 2025-09-30 at 21 25 11" src="https://github.com/user-attachments/assets/9862564f-9918-4c5d-9488-a4d17f88a334" />
+
+To get this new file on your device, you would need `git pull` on your local device:
+
+```
+>>> git pull origin main
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1009 bytes | 336.00 KiB/s, done.
+From https://github.com/(your username)/workdir
+ * branch            main       -> FETCH_HEAD
+   55336bf..ab2df85  main       -> origin/main
+Updating 55336bf..ab2df85
+Fast-forward
+ pull.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 pull.txt
+```
 
 # Getting a repository from Github
-
 
 `Fork` refers to copying someone's GitHub repository and putting it in your GitHub account, so that you have your own copy to work with. You can try this with the git worksho: simply click the **Fork** icon near the top right corner
 
