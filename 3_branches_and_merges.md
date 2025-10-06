@@ -188,3 +188,6 @@ Remotes (e.g., GitHub) have their own branches. Locally you track them via remot
 git pull is shorthand for:
 	1.	git fetch (update your remote-tracking branches), then
 	2.	integrate those fetched commits into your current branch — by default via merge, or via rebase if configured/asked.
+
+
+Merge/rebase operations on remote branches are identical to local ones, except you call them as origin/main, origin/branch_name, etc.
