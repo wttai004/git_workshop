@@ -140,6 +140,11 @@ index 0000000..ce01362
 
 Note: `git diff` and `git show` works best for files that are in plain text formats. Using this on more complicated files (e.g. pdf, Mathematica notebooks) will lead to outputs that are not human readable. 
 
+`git log --graph` visualizes the commit history as a graph. This is how the output may look like over a longer history:
+
+<img width="618" height="723" alt="Screenshot 2025-10-07 at 18 03 47" src="https://github.com/user-attachments/assets/2cffa08b-34d3-472a-8ad5-d32d9937682c" />
+
+
 You can also use `git switch (commit ID)` or `git checkout (commit ID)` to switch to an older version, attaching `HEAD` to a previous commit (this is called a detached HEAD state)—more on that in later section.
 
 ```
@@ -181,4 +186,13 @@ nothing to commit, working tree clean
 
 # A note on Jupyter notebook
 
-Many researchers (myself included) routinely use Jupyter notebook to prototype or demosntrate a calculation. Unfortunately, Jupyter notebook don't play too well with git, because Jupyter notebook under the hood is a JSON file with metadata that changes every time you execute a cell (even if the cell itself is unchanged). This means that tracking differences in Jupyter notebook can be difficult, and also complicates team collaboration effort. There are extensions one can use to integrate Jupyter notebooks and git ([here](https://www.reviewnb.com/git-jupyter-notebook-ultimate-guide#git--jupyter-challenges) is a guide), but they are out of the scope for this workshop. There are also alternative python notebooks such as [Marimo](https://marimo.io) that explicitly aims to be more git-friendly.
+Many researchers (myself included) routinely use Jupyter notebook to prototype or demosntrate a calculation. Unfortunately, Jupyter notebook don't play too well with git, because Jupyter notebook under the hood is a JSON file with metadata that changes every time you execute a cell (even if the cell itself is unchanged). This means that tracking differences in Jupyter notebook can be difficult, and also complicates team collaboration effort—everytime two researchers run a Jupyter notebook separately, the metadata changes easily, and merge conflicts results. Below is an example where VS Studio Code's `git diff` interface alerts a difference simply because the execution count changes, even if the cell is the same.
+
+<img width="1058" height="409" alt="Screenshot 2025-10-07 at 18 11 25" src="https://github.com/user-attachments/assets/277c17fe-b7bc-45ee-9ec6-25bd5baa95f5" />
+
+
+
+There are extensions one can use to integrate Jupyter notebooks and git ([here](https://www.reviewnb.com/git-jupyter-notebook-ultimate-guide#git--jupyter-challenges) is a guide), but they are out of the scope for this workshop. There are also alternative python notebooks such as [Marimo](https://marimo.io) that explicitly aims to be more git-friendly.
+
+
+`git diff` is also horrible if your Jupyter notebook has images. Unfortunately, this is more fundamental to git with no easy way around it, to my knowledge.
