@@ -10,4 +10,5 @@ Here are some useful rules of thumb and best practices to keep in mind:
 - Use .gitignore to exclude temporary files and keep your workplace clean.
 
 <img width="439" height="250" alt="image" src="https://github.com/user-attachments/assets/3b7e2f0b-7397-41ec-8391-a4c1b1a84de1" />
+
 How not to write commit messages. Source: [xkcd](https://xkcd.com/1296/)
