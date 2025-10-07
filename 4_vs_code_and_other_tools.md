@@ -42,6 +42,9 @@ Further, clicking a file in a commit shows a nice comparison of the changes you 
 <img width="1918" height="963" alt="Screenshot 2025-10-06 at 17 17 54" src="https://github.com/user-attachments/assets/3e76971f-1734-4653-9048-2df692df0e35" />
 
 
+Note: the innate git track history works wonderfully for small projects. For larger group projects with 15 collaborators, 10 branches and 5 commits a day, however, it tends to get bloated with histories not of your interest. In this case, one might want to fall back to command line or other tools.
+
+
 # Remote control with VS Code
 
 Clicking "Publich Branch" allows you to publish your branch to a connected GitHub account, assuming you have one set up.
@@ -51,3 +54,12 @@ Clicking "Publich Branch" allows you to publish your branch to a connected GitHu
 Now, if you created a new coommit, you can push the commit to remote origin in this panel:
 
 <img width="1920" height="1000" alt="Screenshot 2025-10-06 at 17 19 17" src="https://github.com/user-attachments/assets/7460e21a-f0d7-41c6-a8c9-d7c6fbd7b793" />
+
+
+# Other useful tools
+
+
+Here are other tools that I personally have no experience with but heard good things from other git users:
+
+- [Difftastic](https://github.com/Wilfred/difftastic): a command-line tool for comparing files based on syntax. Whereas git diff highlights every single change made, including formatting changes as simple as an extra space bar, difftastic understands nesting, alighmet and line-wrapping, allowing you to focus only on the meaningful changes.
+- [Sublime Merge](https://www.sublimemerge.com): a git client with a nice GUI, line-by-line and hunk staging, syntax highlighting for commit, and commit searching. Works with its own text editor [Sublime Text](https://www.sublimetext.com) and can be a good option for users not interested in an IDE.
