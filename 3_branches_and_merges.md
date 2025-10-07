@@ -191,3 +191,16 @@ git pull is shorthand for:
 
 
 Merge/rebase operations on remote branches are identical to local ones, except you call them as origin/main, origin/branch_name, etc.
+
+# Other useful commands
+
+`git tag` is an alternative to `git branch` that affixes a tag to a given commit: for example
+
+```
+git tag v1.4
+```
+
+Whereas `git branch` is a movable pointer, `git tag` is fixed to a commit. It's best used to label a stable version that you may want to revisit later. 
+
+When you find out that your code has broken down after a long series of commit, you can use `git bisect` to perform a binary search in the history to find a particular commit. See [this](https://stackoverflow.com/questions/4713088/how-do-i-use-git-bisect) Stack Exchange for info.
+
