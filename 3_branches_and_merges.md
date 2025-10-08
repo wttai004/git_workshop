@@ -98,7 +98,7 @@ dev_branch.txt	foo.txt		main_branch.txt	pull.txt	push.txt
 
 ## Merge conflicts
 
-Conflicts happen when both branches change the same lines.
+Conflicts happen when both branches change the same files.
 
 ```
 >>> git checkout -b conflict
@@ -139,6 +139,19 @@ To bring this fix onto main:
 git switch main
 git merge conflict
 ```
+
+# Fast forward vs three-way merges
+
+Under the hood, `git merge` has two operating modes: fast-forwarding and three-way merging. Fast-forward merges happen when there's a linear path from the current branch tip to the target branch—in this case, merging is as simple as moving the current branch tip to the target branch tip. On the other hand, when the two branches diverge (for example, when you are pulling a modified remote repository while your local one has been modified), git needs a dedicated commit to tie together the two histories. `git merge` attempts fast-forward merge if possible, and falls back to three-way merges if not. Some three-way merges can still be handled automatically: for example, the case above where the `main` and `dev` branches involve modifying different files. The schematics below visualizes the differences between the two merge modes (Source: [Atlassian](https://www.atlassian.com/git/tutorials/using-branches/git-merge))
+
+
+
+<img width="427" height="662" alt="Screenshot 2025-10-08 at 00 25 35" src="https://github.com/user-attachments/assets/b8897bd9-40dc-4044-af8f-cdf7d9df78fe" />   
+
+vs
+
+<img width="427" height="662" alt="Screenshot 2025-10-08 at 00 26 00" src="https://github.com/user-attachments/assets/e3d44f86-692d-4b75-aed2-3a9e4431fe4d" />
+
 
 # A note on merge vs rebase 
 
