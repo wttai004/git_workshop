@@ -14,7 +14,7 @@ We first create a local directory to use as a testbed, which we initialize as a 
 Initialized empty Git repository in (your home directory)/workdir/.git/
 ```
 
-This would create a hidden folder `.git` where the version history information are stored. 
+This would create a hidden folder `.git` where the version history information are stored. **Warning**: be very careful where you initialize the git directory. Don't initialize this at your home directory!
 
 Using `git status` allows you to view the status of your repository.
 
