@@ -4,13 +4,15 @@ This is a note intended to introduce basic workflow using Git and GitHub that a 
 
 **What is Git?**
 
-Git is a **distributed version control system** that allows you to manage versions of source code or data. It's file-type agnostic—you can use it to store codes, mathematica notebooks, latex documents, small data sets, etc. Git lets you create checkpoints (“commits”), compare versions, and recover history. It's useful to researchers—[this page](https://gitbookdown.dallasdatascience.com/index.html#why-is-git-important-for-scientists) lists a few examples that hopefully won't sound too familiar to you:
+Git is a **distributed version control system** that allows you to manage versions of source code or data. It's file-type agnostic—you can use it to store codes, mathematica notebooks, latex documents, small data sets, etc. Git lets you create checkpoints (“commits”), compare versions, and recover history. It's useful to researchers—here are a few examples that hopefully won't sound too familiar to you, referenced from [this page](https://gitbookdown.dallasdatascience.com/index.html#why-is-git-important-for-scientists).
 
 >Scenario A: You have 5 people collaborating on a single script. That script now results in an error after someone changed a few lines over the weekend. They have no recollection what was changed. ¯\_(._.)_/¯
 >
 >Scenario B: You joined a new lab, and were given a pipeline/script to modify that dated years back. The script is named cool_script_version25000.sh, with few comments. Whoever made it has quit academia and is traveling the world, soul searching, and won’t answer emails. ¯\_(._.)_/¯
 >
 >Scenario C: Collaborator BigName wants to know what preprocessing parameters were used in your manuscript from 5 years ago. You have since changed multiple parameters in your default processing pipeline. ¯\_(._.)_/¯
+>
+>Scenario D: You finsish up a project and make a backup of the codebase as FINAL, hoping to be over with this. But your work goes into review and revision purgatory, and you make a bunch of backup folders to reference its states. Before you know it, you have 12 folders all named variations of FINAL_V2_REVISED_REALFINAL_FIXED_MINUS_SIGN that looks like [this comic](https://phdcomics.com/comics/archive/phd101212s.gif) ¯\_(._.)_/¯
 
 **What is GitHub?**
 
