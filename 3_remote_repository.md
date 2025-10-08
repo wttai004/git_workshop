@@ -86,7 +86,7 @@ Fast-forward
 
 # Getting a repository from Github
 
-`Fork` refers to copying someone's GitHub repository and putting it in your GitHub account, so that you have your own copy to work with. You can try this with the git worksho: simply click the **Fork** icon near the top right corner
+`Fork` refers to copying someone's GitHub repository and putting it in your GitHub account, so that you have your own copy to work with. You can try this with the git workshop: simply click the **Fork** icon near the top right corner
 
 To clone a directory (whether your own or someone else) to your own local computer, simply use `clone`:
 
@@ -96,6 +96,13 @@ To clone a directory (whether your own or someone else) to your own local comput
 
 This will clone the directory to your local device at the directory `~/workshop`. Note that by cloning a repository, it is already associated with the remote repository, so you don't need to run the `git remote add origin` in order to push your commits to your remote repo later on. 
 
-# Note:
 
-For best practice, always fetch/merge and pull before making local changes. Otherwise, merge conflicts would happen and need to be solved manually. More on this in next section.
+# Branches and remote repositores
+
+sRemotes (e.g., GitHub) have their own branches. Locally you track them via remote-tracking refs like origin/main. A local branch typically has an upstream it tracks (e.g., dev ↔ origin/dev). Fundamentally, when you pull for remote branches, you are simply merging the remote branch with your local branch. 
+
+git pull is shorthand for:
+	1.	git fetch (update your remote-tracking branches), then
+	2.	integrate those fetched commits into your current branch — by default via merge, or via rebase if configured/asked.
+
+For best practice, always fetch/merge and pull before making local changes. Otherwise, merge conflicts would happen and need to be solved manually. 
