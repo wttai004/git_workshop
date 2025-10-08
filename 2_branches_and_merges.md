@@ -194,15 +194,6 @@ Further read:
 **Stack exchange answer elaborating subtleties in git pull and git merge**: https://stackoverflow.com/questions/71768999/how-to-merge-when-you-get-error-hint-you-have-divergent-branches-and-need-to-s
 
 
-# On remote repositores
-
-Remotes (e.g., GitHub) have their own branches. Locally you track them via remote-tracking refs like origin/main. A local branch typically has an upstream it tracks (e.g., dev ↔ origin/dev).
-
-git pull is shorthand for:
-	1.	git fetch (update your remote-tracking branches), then
-	2.	integrate those fetched commits into your current branch — by default via merge, or via rebase if configured/asked.
-
-
 Merge/rebase operations on remote branches are identical to local ones, except you call them as origin/main, origin/branch_name, etc.
 
 # Other useful commands
