@@ -163,7 +163,7 @@ world
 Oftentimes, you may want git to ignore certain files directly (e.g. caches, logs, large data sets). For example, let's say that we are running jobs on Slurm and want to ignore the output logs. We can create a `.gitignore` file in the repository:
 
 ```
->>> echo *.out >> .gitignore
+>>> echo "*.out" >> .gitignore
 >>> git add .gitignore
 >>> git commit -m "Created .gitignore"
 ```
