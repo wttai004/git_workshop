@@ -22,7 +22,7 @@ In the workshop, I'll be demonstrating the workings on my laptop. You can also f
 ## What would be covered:
 
 - Basic solo workflow on your machine  
-	- `git status`, `add`, `commit`, `log`, `diff`, `restore`, `stash`
+	- `git status`, `add`, `commit`, `log`, `diff`...
 	- `.gitignore` basics
 	- Syncing with GitHub: `clone`, `pull`, `push`, `fetch`
  	- Basic branching: `branch`, `switch`, `merge` and `rebase`
