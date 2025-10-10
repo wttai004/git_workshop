@@ -51,8 +51,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 The first commands creates a text file `foo.txt`. You'll notice that it's considered 'untracked' by git–new files are not tracked by git by default. To have its versions be tracked,
 
 ```
->>>git add foo.txt 
->>>git status
+>>> git add foo.txt 
+>>> git status
 On branch main
 
 No commits yet
