@@ -67,4 +67,4 @@ This workshop borrows ideas and examples from the resources below:
 There are many, _many_ other references on Git and GitHub online from people more experienced than me. Feel free to explore more of them if interested. To highlight some others:
 
 - **Visual Git Cheatsheet** — NDPSoftware. [link](http://ndpsoftware.com/git-cheatsheet.html#loc=local_repo)
-- **Learning Git Branching** — pcottle. A fun game that goes through branching in git locally and remotely. [link](A fun https://learngitbranching.js.org)
+- **Learning Git Branching** — pcottle. A fun game that goes through branching in git locally and remotely. [link](https://learngitbranching.js.org)
