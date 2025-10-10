@@ -63,7 +63,7 @@ Changes to be committed:
 ```
 
 
-Now, we can use `git commit` to create a version of our file
+This file is in a _staging area_, meaning that it's being tracked in a draft space for git. It's not yet being stored as a commit. To do so, we can use `git commit` to create a snapshot of the folder
 
 ```
 >>> git commit -m "Created foo.txt"
