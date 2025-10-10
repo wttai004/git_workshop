@@ -7,9 +7,9 @@ This section will walk you through basic commands.
 We first create a local directory to use as a testbed, which we initialize as a git directory:
 
 ```
->> mkdir ~/workdir
->> cd ~/workdir
->> git init
+>>> mkdir ~/workdir
+>>> cd ~/workdir
+>>> git init
 Initialized empty Git repository in (your home directory)/workdir/.git/
 ```
 
