@@ -10,7 +10,6 @@ We first create a local directory to use as a testbed, which we initialize as a 
 >> mkdir ~/workdir
 >> cd ~/workdir
 >> git init
-(base) wttai@MacBook-Pro-109 workdir % git init
 Initialized empty Git repository in (your home directory)/workdir/.git/
 ```
 
