@@ -99,12 +99,12 @@ This will clone the directory to your local device at the directory `~/workshop`
 
 # Branches and remote repositores
 
-Remotes repositories (e.g., GitHub) have their own branches. Locally you track them via remote-tracking refs like origin/main. A local branch typically has an upstream it tracks (e.g., dev ↔ origin/dev). Fundamentally, when you pull for remote branches, you are simply merging the remote branch with your local branch. 
+Remotes repositories (e.g., GitHub) have their own branches. Locally you track them via remote-tracking refs like `origin/main`. A local branch typically has an upstream it tracks (e.g., dev ↔ origin/dev). Fundamentally, when you pull for remote branches, you are simply merging the remote branch with your local branch. 
 
 git pull is shorthand for:
 	1.	git fetch (update your remote-tracking branches), then
 	2.	integrate those fetched commits into your current branch — by default via merge, or via rebase if configured/asked.
 
-Under the hood, `git pull` is therefore equivalent to `git fetch` and then `git merge origin/main main`. 
+Under the hood, if you are using  `git pull` to merge the remote `main` branch to the local one, it is equivalent to `git fetch` and then `git merge origin/main`. 
 
 For best practice, always fetch/merge and pull before making local changes. Otherwise, merge conflicts would happen and need to be solved manually. 
