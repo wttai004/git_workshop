@@ -189,7 +189,41 @@ If you have made a lot of commits, you can use `git add --all` to add all change
 
 # A note on Jupyter notebook
 
-Many researchers (myself included) routinely use Jupyter notebook to prototype or demosntrate a calculation. Unfortunately, Jupyter notebook don't play too well with git, because Jupyter notebook under the hood is a JSON file with metadata that changes every time you execute a cell (even if the cell itself is unchanged). This means that tracking differences in Jupyter notebook can be difficult, and also complicates team collaboration effort—everytime two researchers run a Jupyter notebook separately, the metadata changes easily, and merge conflicts results. Below is an example where VS Studio Code's `git diff` interface alerts a difference simply because the execution count changes, even if the cell is the same.
+Many researchers (myself included) routinely use Jupyter notebook to prototype or demosntrate a calculation. Unfortunately, Jupyter notebook don't play too well with git, because Jupyter notebook under the hood is a JSON file with metadata that changes every time you execute a cell (even if the cell itself is unchanged). This means that tracking differences in Jupyter notebook can be difficult, and also complicates team collaboration effort—everytime two researchers run a Jupyter notebook separately, the metadata changes easily, and merge conflicts results. Below is an example where I simply executed a cell, which leads to a difference in the Jupyter notebook. Trying to commit this and then running `git show` will suggest that the differences are due to changes in metadata:
+
+```
+>>> git show
+commit 230432d0268621bea2c90c45a19eefed81178f28 (HEAD -> main)
+Author: Terrence Tai <wt662606957@gmail.com>
+Date:   Wed Oct 15 19:20:05 2025 -0400
+
+    Small change to demonstrate problem of git and Jupyter
+
+diff --git a/notebooks/20251014_qwz_starting_point_different.ipynb b/notebooks/20251014_qwz_starting_point_different.ipynb
+index df498de..3ffdc96 100644
+--- a/notebooks/20251014_qwz_starting_point_different.ipynb
++++ b/notebooks/20251014_qwz_starting_point_different.ipynb
+@@ -2,7 +2,7 @@
+  "cells": [
+   {
+    "cell_type": "code",
+-   "execution_count": 1,
++   "execution_count": 2,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -10,7 +10,7 @@
+      "output_type": "stream",
+      "text": [
+       "Libraries imported successfully!\n",
+-      "Test started at: 2025-10-15 19:19:24\n"
++      "Test started at: 2025-10-15 19:20:00\n"
+      ]
+     }
+    ],
+```
+
+Even third-party GUIs might not help: VS Studio Code's `git diff` interface alerts a difference simply because the execution count changes, even if the cell is the same.
 
 <img width="1058" height="409" alt="Screenshot 2025-10-07 at 18 11 25" src="https://github.com/user-attachments/assets/277c17fe-b7bc-45ee-9ec6-25bd5baa95f5" />
 
