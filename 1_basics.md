@@ -146,7 +146,7 @@ Note: `git diff` and `git show` works best for files that are in plain text form
 <img width="618" height="723" alt="Screenshot 2025-10-07 at 18 03 47" src="https://github.com/user-attachments/assets/2cffa08b-34d3-472a-8ad5-d32d9937682c" />
 
 
-You can also use `git switch (commit ID)` or `git checkout (commit ID)` to switch to an older version, attaching `HEAD` to a previous commit (this is called a detached HEAD state)—more on that in later section.
+You can also use `git switch (commit ID) --detached` or `git checkout (commit ID)` to switch to an older version, attaching `HEAD` to a previous commit (this is called a detached HEAD state)—more on that in later section.
 
 ```
 >>> git switch HEAD^
