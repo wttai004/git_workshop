@@ -83,6 +83,42 @@ dev.txt foo.txt		main_branch.txt pull.txt	push.txt	test.log # Now the file exist
 >>> rm main_branch.txt # Cleaning up the directory
 ```
 
+Finally, you can use `git log` to show the history of your current hsitory's branch (and use `git log --all` to show the history of all branches)
+
+```
+>>>git log --all        
+commit 25021c7a012e672a2ef528e40d2f9ff326077199 (HEAD -> dev)
+Author: Terrence Tai <wt662606957@gmail.com>
+Date:   Wed Oct 15 19:38:56 2025 -0400
+
+    Created dev_branch.txt
+
+commit fd497bd2bc4e241454c2c76c34e8aa46080e54e9 (main)
+Author: Terrence Tai <wt662606957@gmail.com>
+Date:   Wed Oct 15 19:38:02 2025 -0400
+
+    Created main_branch.txt
+
+commit 4692e1d3743845f714001551fe317991e556d746
+Author: Terrence Tai <wt662606957@gmail.com>
+Date:   Wed Oct 15 19:10:59 2025 -0400
+
+    Created .gitignore
+
+commit 673a07dbc6ca25cbd5276b2fba2322abc32ddf44
+Author: Terrence Tai <wt662606957@gmail.com>
+Date:   Wed Oct 15 18:39:39 2025 -0400
+
+    Further changed foo.txt
+
+commit 4bea9980615d04c916890fef79cee8f6e3e13bd8
+Author: Terrence Tai <wt662606957@gmail.com>
+Date:   Wed Oct 15 18:36:05 2025 -0400
+
+    Created foo.txt
+
+```
+
 ## Merging
 
 ```
