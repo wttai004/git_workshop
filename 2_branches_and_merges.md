@@ -76,7 +76,7 @@ You can also use `git show` to examine an individual file in a branch/commit, or
 ```
 >>> git switch dev
 >>> git show main:main_branch.txt
-Main branch # The file won't be in the main branch
+Main branch # The file won't be in the dev branch
 >>> git checkout main -- main_branch.txt
 >>> ls
 dev.txt foo.txt		main_branch.txt pull.txt	push.txt	test.log # Now the file exists
