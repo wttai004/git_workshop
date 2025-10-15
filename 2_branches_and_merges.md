@@ -86,7 +86,7 @@ dev.txt foo.txt		main_branch.txt pull.txt	push.txt	test.log # Now the file exist
 Finally, you can use `git log` to show the history of your current hsitory's branch (and use `git log --all` to show the history of all branches)
 
 ```
->>>git log --all        
+>>> git log --all        
 commit 25021c7a012e672a2ef528e40d2f9ff326077199 (HEAD -> dev)
 Author: Terrence Tai <wt662606957@gmail.com>
 Date:   Wed Oct 15 19:38:56 2025 -0400
