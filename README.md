@@ -46,7 +46,7 @@ If you want to follow along the workshop, you should perform the following:
 
 Students can also apply for the **GitHub Student Developer Pack** (includes tools like GitHub Copilot): https://github.com/education
 
-This workshop assumes basic familiarity with command line interface
+This workshop assumes basic familiarity with command line interface. The commands are written on UNIX-like systems, but they should work on Windows with minor modifications.
 
 
 When you first install Git, you'll need to provide name and email. This is used to document who is creating a given commit:
