@@ -181,7 +181,7 @@ nothing to commit, working tree clean
 
 # Other commands of note
 
-`git reset` allows you to reset a commit. For example, `git reset HEAD^` resets to the previous commit,  `git reset HEAD^^` to two previous ones, etc. You can also use the commit ID in place.
+`git reset [--soft|--mixed|--hard] (target)` moves the HEAD and current branch to the target and allows to reset a commit (by default HEAD). For example, `git reset HEAD^` resets to the previous commit,  `git reset HEAD^^` to two previous ones, etc, and `git reset (commit ID)` lets you go to a certain commit. There are different modes (soft, mixed, hard). A most common use case is to undo all changes after the last commit, which is accomplished with `git reset --hard`. Use with caution! See [here](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) for more info.
 
 `git revert` is another way to reset a commit, but it does so by creating a new commit that is identical to the desired one. This is a better choice for works with a remote repository where you have already pushed a commit. 
 
