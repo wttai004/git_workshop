@@ -141,9 +141,16 @@ Conflicts happen when both branches change the same files.
 Switched to a new branch 'conflict'
 >>> echo "Mainnnnnnnnn branch" > main_branch.txt
 >>> git add main_branch.txt 
->>> git commit -m "Modified an existing file. This would cause conflict."
-[conflict 8140a1e] Modified an existing file. This would cause conflict.
+>>> git commit -m "Modified an existing file in conflict branch. This would cause conflict."
+[conflict 8140a1e] Modified an existing file in conflict branch. This would cause conflict.
  1 file changed, 1 insertion(+)
+>>> git switch main
+Switched to branch 'main'
+>>> echo "Branch" > main_branch.txt
+>>> git add main_branch.txt
+>>> git commit -m "Modified an existing file in main branch. This would cause conflict."
+[main b081615] Modified an existing file in main branch. This would cause conflict.
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 >>> git merge main
 Auto-merging main_branch.txt
 CONFLICT (content): Merge conflict in main_branch.txt
