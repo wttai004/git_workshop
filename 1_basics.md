@@ -183,6 +183,8 @@ nothing to commit, working tree clean
 
 `git revert` is another way to reset a commit, but it does so by creating a new commit that is identical to the desired one. This is a better choice for works with a remote repository where you have already pushed a commit. 
 
+If you have made a lot of commits, you can use `git add --all` to add all changed files (that are not in .gitignore) to the staging area.
+
 # A note on Jupyter notebook
 
 Many researchers (myself included) routinely use Jupyter notebook to prototype or demosntrate a calculation. Unfortunately, Jupyter notebook don't play too well with git, because Jupyter notebook under the hood is a JSON file with metadata that changes every time you execute a cell (even if the cell itself is unchanged). This means that tracking differences in Jupyter notebook can be difficult, and also complicates team collaboration effort—everytime two researchers run a Jupyter notebook separately, the metadata changes easily, and merge conflicts results. Below is an example where VS Studio Code's `git diff` interface alerts a difference simply because the execution count changes, even if the cell is the same.
