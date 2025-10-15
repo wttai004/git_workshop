@@ -136,6 +136,8 @@ index 0000000..ce01362
 +hello
 ```
 
+`git show` can also be used to visualize all changes in a given commit, etc. See [here](https://www.atlassian.com/git/tutorials/git-show) for more info.
+
 
 Note: `git diff` and `git show` works best for files that are in plain text formats. Using this on more complicated files (e.g. pdf, Mathematica notebooks) will lead to outputs that are not human readable. 
 
