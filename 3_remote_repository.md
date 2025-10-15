@@ -11,7 +11,7 @@ Now, you can add the GitHub repo as the remote repository you want to push your 
 
 ```
 >>> git remote add origin https://github.com/<your_username>/workdir.git
->>>  git remote -v
+>>> git remote -v
 origin	https://github.com/<your_username>/workdir.git (fetch)
 origin	https://github.com/<your_username>/workdir.git (push)
 ```
