@@ -19,7 +19,7 @@ origin	https://github.com/<your_username>/workdir.git (push)
 Now, you can push your repository to the git repo
 
 ```
->>> git push -u origin main 
+>>> git push -u origin main  
 Enumerating objects: 9, done.
 Counting objects: 100% (9/9), done.
 Delta compression using up to 10 threads
@@ -31,6 +31,7 @@ To https://github.com/<your_username>/workdir.git
 
 ```
 
+The `-u` in `git push -u origin main` sets `main`'s upstream to be `origin/main`. Do this the first time you push a branch. See [here](https://stackoverflow.com/questions/5697750/what-exactly-does-the-u-do-git-push-u-origin-master-vs-git-push-origin-ma) for more info.
 
 # Synchronizing local changes to remote repository
 
