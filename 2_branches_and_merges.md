@@ -25,15 +25,6 @@ On branch dev
 nothing to commit, working tree clean
 ```
 
-```
->>> git branch dev
->>> git switch dev
-Switched to branch 'dev'
->>> git status
-On branch dev
-nothing to commit, working tree clean
-```
-
 `git branch (branchname)` creates a new branch but _does not switch to the new branch_. To go to the new branch, you need to use either `git switch` or (in older versions) `git branch`. Alternatively,  `git switch -c (branchname)` or (in older versions) `git checkout -b (branchname)` is a shorthand to both create and switch to the branch. 
 
 (Note: `git switch` is a newer syntax compared to `git checkout` for switching branches, which is overloaded because `git checkout` is used both to switch branches and to reset files to certain revisions.)
@@ -55,7 +46,7 @@ foo.txt		main_branch.txt pull.txt	push.txt	test.log
 >>> git switch dev
 Switched to branch 'dev'
 >>> ls
-foo.txt		pull.txt	push.txt	test.log
+foo.txt
 ```
 
 Note that the files you created in the main branch doesn't impact the dev branch.
@@ -68,7 +59,7 @@ Note that the files you created in the main branch doesn't impact the dev branch
  1 file changed, 1 insertion(+)
  create mode 100644 dev_branch.txt
 >>> ls
-dev.txt foo.txt		pull.txt	push.txt	test.log
+dev.txt foo.txt
 ```
 
 You can also use `git show` to examine an individual file in a branch/commit, or `git checkout` to replace the working copy of the file with the version from the branch/commit.
@@ -79,7 +70,7 @@ You can also use `git show` to examine an individual file in a branch/commit, or
 Main branch # The file won't be in the dev branch
 >>> git checkout main -- main_branch.txt
 >>> ls
-dev.txt foo.txt		main_branch.txt pull.txt	push.txt	test.log # Now the file exists
+dev.txt foo.txt		main_branch.txt # Now the file exists
 >>> rm main_branch.txt # Cleaning up the directory
 ```
 
@@ -129,7 +120,7 @@ Merge made by the 'ort' strategy.
  1 file changed, 1 insertion(+)
  create mode 100644 main_branch.txt
 >>> ls
-dev_branch.txt	foo.txt		main_branch.txt	pull.txt	push.txt
+dev_branch.txt	foo.txt		main_branch.txt
 ```
 
 ## Merge conflicts
