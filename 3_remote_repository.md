@@ -85,7 +85,7 @@ Fast-forward
  create mode 100644 pull.txt
 ```
 
-# Getting a repository from Github
+# Getting a repository from GitHub
 
 `Fork` refers to copying someone's GitHub repository and putting it in your GitHub account, so that you have your own copy to work with. You can try this with the git workshop: simply click the **Fork** icon near the top right corner
 
