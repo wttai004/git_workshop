@@ -69,7 +69,7 @@ You will be asked to create a name for the branch (I use "dev"), after which the
 
 <img width="382" height="835" alt="Screenshot 2025-10-10 at 16 45 37" src="https://github.com/user-attachments/assets/5affa546-80b9-4c6c-9bb6-94d1625ef324" />
 
-I've gone ahead and created a folder called "dev.txt" and created a commit. If you want to publish the branch remotely, click "Publish Branch" like the previous section on remote control. 
+I've gone ahead and created a file called "dev.txt" and created a commit. If you want to publish the branch remotely, click "Publish Branch" like the previous section on remote control. 
 
 <img width="1498" height="871" alt="Screenshot 2025-10-10 at 16 46 43" src="https://github.com/user-attachments/assets/5f175f7e-9abb-44ae-8713-a8258ceaa612" />
 
